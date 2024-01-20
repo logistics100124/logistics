@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "outgo" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<p><strong>{% trans "dateo" %}: </strong>{{ outgo.dateo | date:"d.m.Y"  }}</p>					
+			<p><strong>{% trans "numb" %}: </strong>{{ outgo.numb  }}</p>					
+		</div>
+		<div class="card-body">
+			<p><strong>{% trans "organization" %}: </strong>{{ outgo.organization }}</p>			
+			<p><strong>{% trans "automobile" %}: </strong>{{ outgo.replica }}, {{ outgo.reg_number }}</p>			
+		</div>
+		<div class="card-footer">	
+			<p><strong>{% trans "total" %}: </strong>{{ outgo.total | stringformat:"1.0f" }} ₽</p>				
+		</div>		
+	</div>
+	<div class="div-button-center">
+		<a class="btn btn-outline-info" style="width:100px" href="{% url 'outgo_index' %}">{% trans "Back" %}</a> 	
+	</div>
+</div>
+{% endblock content %}

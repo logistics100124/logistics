@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "sales" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div id="print_content">
+	<h2>{% trans "Sale" %}</h2>
+	<h4>{% trans "dateo" %}: {{ outgo.dateo| date:"d.m.Y" }}</h4>
+	<h4>{% trans "numb" %}: {{ outgo.numb }}</h4>
+	<h4>{% trans "organization" %}: {{ outgo.organization }}</h4>
+	<h4>{% trans "automobile" %}: {{ outgo.replica }}, {{ outgo.reg_number }}</h4>
+	<h4>{% trans "total" %}: {{ outgo.total | stringformat:"1.0f" }} ₽</h4>
+	<hr>
+	<h2>{% trans "sale" %}</h2>
+	<p class="hide_for_print_element"><a href="{% url 'sale_create' outgo_id %}">{% trans "Add" %}</a></p>
+	<hr>
+	{% if sale.count > 0 %}
+	<div class="row">
+		<table id="table" class="table-manager" style="width:100%; margin: 10px">
+			<thead>
+				<tr>
+					<th class="hide_for_print_element"><p></p></th>
+					<th><p>{% trans "catalog_category" %}<br>{% trans "catalog_title" %}</p></th>
+					<th><p>{% trans "catalog_price" %}</p></th>
+					<th><p>{% trans "quantity" %}</p></th>
+					<th><p>{% trans "total" %}</p></th>										
+				</tr>
+			</thead>
+			<tbody>
+				{% for p in sale %}
+				<tr>	
+					<td class="hide_for_print_element">
+						<p>
+							<a href="{% url 'sale_edit' p.id outgo_id %}">{% trans "Change" %}</a> |
+							<a href="{% url 'sale_read' p.id outgo_id %}">{% trans "View" %}</a> |
+							<a onclick="return confirm('Удалить запись?')" href="{% url 'sale_delete' p.id outgo_id %}">{% trans "Delete" %}</a>
+						</p>
+					</td>							
+					<td>
+						<p>{{ p.category }}<br>{{ p.title }}</p>
+					</td>				
+					<td>
+						<p>{{ p.price | stringformat:"1.0f" }} ₽</p>
+					</td>
+					<td>
+						<p>{{ p.quantity }} {{ p.unit }}</p>
+					</td>
+					<td>
+						<p>{{ p.total | stringformat:"1.0f" }} ₽</p>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
+	<div class="div-button-center hide_for_print_element" style="margin-bottom: 10px">
+		<a class="btn btn-outline-info" style="width:150px" href="{% url 'outgo_index' %}">{% trans "Back" %}</a> 
+		<button class="btn btn-info" name = "print" id ="print" onclick='printDiv("print_content")' style="text-align: center;width:150px">{% trans "Print" %}</button>
+	</div>  	
+</div>		
+	</div>	
+</div>
+<script>
+	function printDiv(divName) {
+		// Печать контейнера div
+		// Оригинальный контент
+		var originalContents = document.body.innerHTML;
+		// Скрываемый класс
+		var collection = document.getElementsByClassName("hide_for_print_element");
+		for(var i=0; i<collection.length; i++)collection[i].style.display='none';
+		// Область печати
+		var printContents = document.getElementById(divName).innerHTML;
+		// Вывод на печать			
+		document.body.innerHTML = printContents;
+		window.print();
+		// Возврат документа в исходное состояние
+		document.body.innerHTML = originalContents;
+	}
+</script>	
+{% endblock content %}
+

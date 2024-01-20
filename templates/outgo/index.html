@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "outgos" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "outgos" %}</h2>
+<p><a href="{% url 'outgo_create'%}">{% trans "Add" %}</a></p>
+<hr>
+{% if outgo.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p></p></th>
+				<th><p>{% trans "dateo" %}</p></th>
+				<th><p>{% trans "numb" %}</p></th>
+				<th><p>{% trans "organization" %}</p></th>
+				<th><p>{% trans "automobile" %}</p></th>
+				<th><p>{% trans "catalogs" %}</p></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in outgo %}
+			<tr>
+				<td>
+					<p>
+						<a href="{% url 'outgo_edit' n.id %}">{% trans "Change" %}</a> |
+						<a href="{% url 'outgo_read' n.id %}">{% trans "View" %}</a> |
+						<a onclick="return confirm('Удалить запись?')" href="{% url 'outgo_delete' n.id %}">{% trans "Delete" %}</a>
+					</p>
+				</td>
+				<td>
+					<p>{{ n.dateo | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					<p>{{ n.numb }}</p>	
+				</td>
+				<td>				
+					<p>{{ n.organization }}</p>	
+				</td>
+				<td>				
+					<p>{{ n.replica }}<br>{{ n.reg_number }}</p>	
+				</td>
+				<td>
+					<p>{% trans "total" %}: {{ n.total | stringformat:"1.0f" }} ₽</p>	
+					<p><a href="{% url 'sale_index' n.id%}">{% trans "sales" %}</a></p>	
+				</td>		
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'outgo_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}

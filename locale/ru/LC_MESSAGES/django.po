@@ -1,0 +1,490 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-19 14:15+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\stock\forms.py:33 .\stock\forms.py:70
+msgid "organization_title"
+msgstr "Название"
+
+#: .\stock\forms.py:53
+msgid "Minimum age 18 years old"
+msgstr "Минимальный возраст 18 лет"
+
+#: .\stock\forms.py:55
+msgid "Wrong date and time format"
+msgstr "Неправильный формат даты и времени"
+
+#: .\stock\forms.py:85 .\stock\forms.py:176 .\stock\models.py:110
+#: .\stock\models.py:222 .\stock\models.py:270
+#: .\templates\catalog\index.html:11 .\templates\coming\index.html:17
+#: .\templates\coming\read.html:14 .\templates\organization\create.html:5
+#: .\templates\organization\edit.html:5 .\templates\organization\read.html:5
+#: .\templates\outgo\index.html:17 .\templates\outgo\read.html:14
+#: .\templates\report\index.html:49 .\templates\report\index.html:95
+#: .\templates\sale\index.html:11
+msgid "organization"
+msgstr "Организация"
+
+#: .\stock\forms.py:86 .\stock\forms.py:177
+#: .\templates\automobile\create.html:5 .\templates\automobile\edit.html:5
+#: .\templates\automobile\read.html:5 .\templates\catalog\index.html:12
+#: .\templates\coming\index.html:18 .\templates\coming\read.html:15
+#: .\templates\outgo\index.html:18 .\templates\outgo\read.html:15
+#: .\templates\report\index.html:50 .\templates\report\index.html:96
+#: .\templates\sale\index.html:12
+msgid "automobile"
+msgstr "Автомобиль"
+
+#: .\stock\forms.py:95 .\stock\forms.py:186
+msgid "Cannot be greater than the current date"
+msgstr "Не может быть больше текущей даты"
+
+#: .\stock\forms.py:104 .\stock\forms.py:195
+msgid "The number must be greater than zero"
+msgstr "Число должно быть больше нуля"
+
+#: .\stock\forms.py:117 .\stock\models.py:132 .\stock\models.py:170
+#: .\stock\models.py:274 .\templates\category\index.html:15
+msgid "category_title"
+msgstr "Название"
+
+#: .\stock\forms.py:142 .\stock\models.py:58 .\templates\catalog\list.html:20
+#: .\templates\catalog\list.html:52 .\templates\catalog\list.html:54
+#: .\templates\category\create.html:5 .\templates\category\edit.html:5
+#: .\templates\category\read.html:5 .\templates\driver\index.html:27
+#: .\templates\driver\read.html:16
+msgid "category"
+msgstr "Категория"
+
+#: .\stock\forms.py:150 .\stock\forms.py:220
+msgid "Quantity must be greater than zero"
+msgstr "Количество должно быть больше нуля."
+
+#: .\stock\forms.py:159
+msgid "Price must be greater than zero"
+msgstr "Цена должна быть больше нуля"
+
+#: .\stock\forms.py:208 .\templates\catalog\create.html:6
+#: .\templates\catalog\edit.html:6 .\templates\catalog\index.html:15
+msgid "catalog"
+msgstr "Каталог"
+
+#: .\stock\models.py:33 .\templates\organization\index.html:15
+msgid "organization_name"
+msgstr "Название"
+
+#: .\stock\models.py:34 .\templates\organization\index.html:16
+#: .\templates\organization\read.html:12
+msgid "organization_address"
+msgstr "Адрес"
+
+#: .\stock\models.py:35 .\templates\organization\index.html:17
+#: .\templates\organization\read.html:13
+msgid "organization_phone"
+msgstr "Телефон"
+
+#: .\stock\models.py:36 .\templates\organization\index.html:18
+#: .\templates\organization\read.html:14
+msgid "organization_email"
+msgstr "E-Mail"
+
+#: .\stock\models.py:37 .\templates\organization\index.html:19
+#: .\templates\organization\read.html:15
+msgid "organization_leader"
+msgstr "ФИО руководителя"
+
+#: .\stock\models.py:55 .\templates\driver\index.html:18
+msgid "full_name"
+msgstr "ФИО"
+
+#: .\stock\models.py:56 .\templates\driver\index.html:21
+#: .\templates\driver\read.html:12
+msgid "birthday"
+msgstr "Дата рождения"
+
+#: .\stock\models.py:57 .\templates\driver\index.html:24
+#: .\templates\driver\read.html:13
+msgid "phone"
+msgstr "Телефон"
+
+#: .\stock\models.py:75 .\stock\models.py:111 .\stock\models.py:223
+#: .\stock\models.py:271 .\templates\automobile\index.html:18
+msgid "replica"
+msgstr "Модель"
+
+#: .\stock\models.py:76 .\stock\models.py:112 .\stock\models.py:224
+#: .\stock\models.py:272 .\templates\automobile\index.html:21
+msgid "reg_number"
+msgstr "Госномер"
+
+#: .\stock\models.py:88 .\stock\models.py:108 .\templates\catalog\index.html:9
+#: .\templates\coming\index.html:15 .\templates\coming\read.html:10
+#: .\templates\report\index.html:47
+msgid "datec"
+msgstr "Дата"
+
+#: .\stock\models.py:89 .\stock\models.py:109 .\stock\models.py:200
+#: .\stock\models.py:221 .\stock\models.py:269
+#: .\templates\catalog\index.html:10 .\templates\coming\index.html:16
+#: .\templates\coming\read.html:11 .\templates\outgo\index.html:16
+#: .\templates\outgo\read.html:11 .\templates\report\index.html:48
+#: .\templates\report\index.html:94 .\templates\sale\index.html:10
+msgid "numb"
+msgstr "Номер"
+
+#: .\stock\models.py:113 .\stock\models.py:178 .\stock\models.py:225
+#: .\stock\models.py:282 .\templates\catalog\index.html:13
+#: .\templates\catalog\index.html:27 .\templates\coming\index.html:45
+#: .\templates\coming\read.html:18 .\templates\outgo\index.html:45
+#: .\templates\outgo\read.html:18 .\templates\report\index.html:70
+#: .\templates\report\index.html:116 .\templates\report\index.html:141
+#: .\templates\sale\index.html:13 .\templates\sale\index.html:27
+msgid "total"
+msgstr "Всего"
+
+#: .\stock\models.py:145 .\stock\models.py:171 .\stock\models.py:275
+#: .\templates\catalog\index.html:24 .\templates\report\index.html:138
+#: .\templates\sale\create.html:14 .\templates\sale\index.html:24
+msgid "catalog_title"
+msgstr "Название"
+
+#: .\stock\models.py:146 .\stock\models.py:172 .\stock\models.py:276
+#: .\templates\sale\read.html:14
+msgid "catalog_details"
+msgstr "Описание"
+
+#: .\stock\models.py:147 .\templates\catalog\index.html:25
+#: .\templates\report\index.html:139 .\templates\sale\create.html:15
+#: .\templates\sale\index.html:25 .\templates\sale\read.html:15
+msgid "catalog_price"
+msgstr "Цена"
+
+#: .\stock\models.py:148 .\stock\models.py:174 .\stock\models.py:247
+#: .\stock\models.py:278 .\templates\catalog\index.html:26
+#: .\templates\sale\create.html:17 .\templates\sale\index.html:26
+#: .\templates\sale\read.html:16
+msgid "quantity"
+msgstr "Количество"
+
+#: .\stock\models.py:149 .\stock\models.py:175 .\stock\models.py:279
+msgid "unit"
+msgstr "Ед.измерения"
+
+#: .\stock\models.py:150 .\stock\models.py:176 .\stock\models.py:280
+msgid "catalog_photo"
+msgstr "Фотография"
+
+#: .\stock\models.py:151 .\stock\models.py:177 .\stock\models.py:281
+#: .\templates\catalog\index.html:28 .\templates\report\index.html:142
+msgid "storage"
+msgstr "Место хранения"
+
+#: .\stock\models.py:168
+msgid "coming_id"
+msgstr "coming_id"
+
+#: .\stock\models.py:169
+msgid "category_id"
+msgstr "category_id"
+
+#: .\stock\models.py:173 .\stock\models.py:277
+#: .\templates\catalog\list.html:62 .\templates\catalog\list.html:64
+msgid "price"
+msgstr "Цена"
+
+#: .\stock\models.py:179
+msgid "sale_quantity"
+msgstr "Продано"
+
+#: .\stock\models.py:180 .\templates\catalog\details.html:27
+#: .\templates\catalog\list.html:120 .\templates\report\index.html:140
+#: .\templates\sale\create.html:16
+msgid "available"
+msgstr "Доступно"
+
+#: .\stock\models.py:199 .\stock\models.py:220 .\stock\models.py:268
+#: .\templates\outgo\index.html:15 .\templates\outgo\read.html:10
+#: .\templates\report\index.html:93 .\templates\sale\index.html:9
+msgid "dateo"
+msgstr "Дата"
+
+#: .\stock\models.py:267
+msgid "outgo_id"
+msgstr "outgo_id"
+
+#: .\stock\models.py:273
+msgid "catalog_id"
+msgstr "catalog_id"
+
+#: .\templates\automobile\create.html:3 .\templates\automobile\index.html:7
+#: .\templates\catalog\index.html:16 .\templates\category\create.html:3
+#: .\templates\category\index.html:7 .\templates\coming\index.html:7
+#: .\templates\driver\create.html:3 .\templates\driver\index.html:7
+#: .\templates\organization\create.html:3
+#: .\templates\organization\index.html:7 .\templates\outgo\index.html:7
+#: .\templates\outgo\index.html:54 .\templates\sale\index.html:16
+msgid "Add"
+msgstr "Добавить"
+
+#: .\templates\automobile\create.html:12 .\templates\automobile\edit.html:12
+#: .\templates\catalog\create.html:13 .\templates\catalog\edit.html:13
+#: .\templates\category\create.html:12 .\templates\category\edit.html:12
+#: .\templates\coming\create.html:13 .\templates\coming\edit.html:13
+#: .\templates\driver\create.html:12 .\templates\driver\edit.html:12
+#: .\templates\organization\create.html:12
+#: .\templates\organization\edit.html:12 .\templates\outgo\create.html:13
+#: .\templates\outgo\edit.html:13 .\templates\sale\create.html:42
+#: .\templates\sale\edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\automobile\create.html:13 .\templates\automobile\edit.html:13
+#: .\templates\automobile\read.html:20 .\templates\catalog\create.html:14
+#: .\templates\catalog\details.html:31 .\templates\catalog\edit.html:14
+#: .\templates\catalog\index.html:64 .\templates\catalog\read.html:30
+#: .\templates\category\create.html:13 .\templates\category\edit.html:13
+#: .\templates\category\read.html:18 .\templates\coming\create.html:14
+#: .\templates\coming\edit.html:14 .\templates\coming\read.html:22
+#: .\templates\driver\create.html:13 .\templates\driver\edit.html:13
+#: .\templates\driver\read.html:21 .\templates\organization\create.html:13
+#: .\templates\organization\edit.html:13 .\templates\organization\read.html:22
+#: .\templates\outgo\create.html:14 .\templates\outgo\edit.html:14
+#: .\templates\outgo\read.html:22 .\templates\sale\create.html:43
+#: .\templates\sale\edit.html:14 .\templates\sale\index.html:59
+#: .\templates\sale\read.html:22
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\automobile\edit.html:3 .\templates\automobile\index.html:33
+#: .\templates\catalog\edit.html:3 .\templates\catalog\index.html:36
+#: .\templates\category\edit.html:3 .\templates\category\index.html:23
+#: .\templates\coming\edit.html:3 .\templates\coming\index.html:27
+#: .\templates\driver\edit.html:3 .\templates\driver\index.html:36
+#: .\templates\organization\edit.html:3 .\templates\organization\index.html:27
+#: .\templates\outgo\edit.html:3 .\templates\outgo\index.html:27
+#: .\templates\sale\edit.html:3 .\templates\sale\index.html:35
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\automobile\index.html:3 .\templates\automobile\index.html:6
+#: .\templates\base.html:66
+msgid "automobiles"
+msgstr "Автомобили"
+
+#: .\templates\automobile\index.html:24 .\templates\automobile\read.html:15
+#: .\templates\driver\create.html:5 .\templates\driver\edit.html:5
+#: .\templates\driver\read.html:5
+msgid "driver"
+msgstr "Водитель"
+
+#: .\templates\automobile\index.html:34 .\templates\automobile\read.html:3
+#: .\templates\catalog\index.html:37 .\templates\category\index.html:24
+#: .\templates\category\read.html:3 .\templates\coming\index.html:28
+#: .\templates\driver\index.html:37 .\templates\driver\read.html:3
+#: .\templates\organization\index.html:28 .\templates\organization\read.html:3
+#: .\templates\outgo\index.html:28 .\templates\sale\index.html:36
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\automobile\index.html:35 .\templates\catalog\index.html:38
+#: .\templates\category\index.html:25 .\templates\coming\index.html:29
+#: .\templates\driver\index.html:38 .\templates\organization\index.html:29
+#: .\templates\outgo\index.html:29 .\templates\sale\index.html:37
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\base.html:44
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\base.html:46 .\templates\contact.html:8
+msgid "Contacts"
+msgstr "Котнакты"
+
+#: .\templates\base.html:49
+msgid "Catalog"
+msgstr "Каталог"
+
+#: .\templates\base.html:53
+msgid "reports"
+msgstr "Отчеты"
+
+#: .\templates\base.html:64 .\templates\driver\index.html:3
+#: .\templates\driver\index.html:6
+msgid "drivers"
+msgstr "Водители"
+
+#: .\templates\base.html:65 .\templates\organization\index.html:6
+msgid "organizations"
+msgstr "Организации"
+
+#: .\templates\base.html:67 .\templates\category\index.html:6
+msgid "categorys"
+msgstr "Категории"
+
+#: .\templates\base.html:68 .\templates\coming\index.html:3
+#: .\templates\coming\index.html:6
+msgid "comings"
+msgstr "Приходные накладные"
+
+#: .\templates\base.html:69 .\templates\outgo\index.html:3
+#: .\templates\outgo\index.html:6
+msgid "outgos"
+msgstr "Расходные накладные"
+
+#: .\templates\base.html:74
+msgid "My account"
+msgstr "Мой аккаунт"
+
+#: .\templates\base.html:75
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\templates\base.html:77
+msgid "Log out"
+msgstr "Выход"
+
+#: .\templates\base.html:82
+msgid "Log In"
+msgstr "Вход"
+
+#: .\templates\base.html:83
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\templates\catalog\create.html:3 .\templates\coming\create.html:3
+#: .\templates\outgo\create.html:3 .\templates\sale\create.html:3
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\catalog\details.html:4 .\templates\catalog\list.html:107
+msgid "Catalog details"
+msgstr "Описание"
+
+#: .\templates\catalog\index.html:4 .\templates\coming\index.html:19
+#: .\templates\coming\index.html:46 .\templates\outgo\index.html:19
+#: .\templates\report\index.html:51 .\templates\report\index.html:71
+#: .\templates\report\index.html:97
+msgid "catalogs"
+msgstr "Каталог"
+
+#: .\templates\catalog\index.html:8
+msgid "Coming"
+msgstr "Приходная накладная"
+
+#: .\templates\catalog\index.html:24 .\templates\report\index.html:138
+#: .\templates\sale\create.html:14 .\templates\sale\index.html:24
+msgid "catalog_category"
+msgstr "Категория"
+
+#: .\templates\catalog\index.html:65 .\templates\sale\index.html:60
+msgid "Print"
+msgstr "Печать"
+
+#: .\templates\catalog\list.html:4 .\templates\catalog\list.html:7
+msgid "Catalog list"
+msgstr "Каталог"
+
+#: .\templates\catalog\list.html:14
+msgid "Search"
+msgstr "Поиск"
+
+#: .\templates\catalog\list.html:37 .\templates\catalog\list.html:57
+#: .\templates\catalog\list.html:59
+msgid "title"
+msgstr "Название"
+
+#: .\templates\catalog\list.html:47
+msgid "Sort"
+msgstr "Сортировка"
+
+#: .\templates\catalog\list.html:73
+msgid "desc"
+msgstr "По убыванию"
+
+#: .\templates\catalog\list.html:80 .\templates\report\index.html:17
+msgid "Go"
+msgstr "Выполнить"
+
+#: .\templates\catalog\list.html:81 .\templates\report\index.html:19
+msgid "Reset"
+msgstr "Сброс"
+
+#: .\templates\catalog\read.html:4 .\templates\coming\read.html:3
+#: .\templates\outgo\read.html:3 .\templates\sale\read.html:4
+msgid "Read"
+msgstr "Просмотреть"
+
+#: .\templates\category\index.html:3 .\templates\organization\index.html:3
+msgid "List"
+msgstr "Список"
+
+#: .\templates\coming\create.html:6 .\templates\coming\edit.html:6
+#: .\templates\coming\read.html:6 .\templates\report\index.html:29
+#: .\templates\report\index.html:41
+msgid "coming"
+msgstr "Приходная накладная"
+
+#: .\templates\index.html:4 .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "Logistics"
+
+#: .\templates\outgo\create.html:6 .\templates\outgo\edit.html:6
+#: .\templates\outgo\read.html:6 .\templates\report\index.html:32
+#: .\templates\report\index.html:87
+msgid "outgo"
+msgstr "Расходная накладная"
+
+#: .\templates\outgo\index.html:46 .\templates\report\index.html:117
+#: .\templates\sale\index.html:4
+msgid "sales"
+msgstr "Продажа"
+
+#: .\templates\report\index.html:4 .\templates\report\index.html:7
+msgid "Reports"
+msgstr "Отчеты"
+
+#: .\templates\report\index.html:11
+msgid "Date range"
+msgstr "Диапазон дат"
+
+#: .\templates\report\index.html:18 .\templates\report\index.html:22
+msgid "Excel"
+msgstr "Экспорт в Excel"
+
+#: .\templates\report\index.html:35 .\templates\report\index.html:132
+msgid "catalog_available"
+msgstr "Доступно"
+
+#: .\templates\sale\create.html:6 .\templates\sale\edit.html:6
+#: .\templates\sale\index.html:15
+msgid "sale"
+msgstr "Продажа"
+
+#: .\templates\sale\index.html:8
+msgid "Sale"
+msgstr "Продажа"

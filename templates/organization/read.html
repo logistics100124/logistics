@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "View" %}{% endblock title %}
+{% block content %}
+<h2>{% trans "organization" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h4>{{ organization.name }}</h4>		
+		</div>
+		<div class="card-body">
+			<p><strong>{% trans "organization_address" %}</strong>: {{ organization.address }}</p>			
+			<p><strong>{% trans "organization_phone" %}</strong>: {{ organization.phone }}</p>			
+			<p><strong>{% trans "organization_email" %}</strong>: {{ organization.email }}</p>			
+			<p><strong>{% trans "organization_leader" %}</strong>: {{ organization.leader }}</p>			
+		</div>
+		<div class="card-footer">				
+		</div>		
+	</div>
+	<br>
+	<div class="div-button-center">
+		<a class="btn btn-outline-info" style="width:100px" href="{% url 'organization_index' %}">{% trans "Back" %}</a> 	
+	</div>	
+</div>
+{% endblock content %}

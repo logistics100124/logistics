@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<div class="col-md-3">
+		<h3 align="center">{% trans "Contacts" %}</h3>
+		<h2 align="center">ТОО "Kyran Logistics (Қыран Логистикс)"</h2>
+		<address>
+			<p>г.Шымкент, Енбекшинский р-н,<br> Трасса Каратюбинское.Зд.55</p>			
+			<a href="mailto:info@kyran-logistics.kz">info@kyran-logistics.kz</a>
+		</address>				
+		<p><a href="tel:+7701XXXXXX">+7-701-XXX-XXXX</a><p>
+	</div>
+	<div class="col-md-9" style="position:relative;overflow:hidden;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.8151185522033!2d69.61443861198256!3d42.28246977108012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a91f01405b93a1%3A0x3e9a2adcc4008083!2z0JrQsNGA0LDRgtGO0LHQuNC90YHQutC-0LUg0YguLCDQqNGL0LzQutC10L3Rgg!5e0!3m2!1sru!2skz!4v1705385094266!5m2!1sru!2skz" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+</div>
+{% endblock content %}

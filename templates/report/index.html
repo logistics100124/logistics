@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Reports" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Reports" %}</h2>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div style="margin-top:10px">
+		<p>{% trans "Date range" %}:
+		<input type="date" value="{{start_date}}" name ="start_date" id ="start_date">
+		<input type="date" value="{{finish_date}}" name = "finish_date" id ="finish_date">
+		</p>
+	</div>
+	<div class="row" style="margin-top:10px">
+		<button class="btn btn-outline-success" name="searchBtn" style="width:100px; margin:5px">{% trans "Go" %}</button>
+		<!-- <a class="btn btn-outline-success" id="excelBtn" name="excelBtn" type="submit" href="{% url 'export_excel' %}" style="width:100px; margin:5px">{% trans "Excel" %}</a> -->
+		<button class="btn btn-outline-primary" name="resetBtn" type="submit" onClick="window.location.reload();" style="width:100px; margin:5px">{% trans "Reset" %}</button>
+	</div>
+	<div class="row">		
+		<!-- <p><input type="checkbox" id="checkbox_excel" name="checkbox_excel" value="ok">  {% trans "Excel" %}</p> -->
+		<a href="{% url 'export_excel' %}">{% trans "Excel" %}</a>
+	</div>	
+</form>
+<hr>
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+	<li class="nav-item" role="presentation">
+		<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">{% trans "comings" %}</button>
+	</li>
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">{% trans "outgos" %}</button>
+	</li>
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="true">{% trans "catalog_available" %}</button>
+	</li>
+</ul>
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+		<div class="row">
+			<h1>{% trans "comings" %}</h1>
+		</div>
+		<div class="row">
+			<table id="table1" class="table-manager" style="width:100%">
+				<thead>
+					<tr>
+						<th><p>{% trans "datec" %}</p></th>
+						<th><p>{% trans "numb" %}</p></th>
+						<th><p>{% trans "organization" %}</p></th>
+						<th><p>{% trans "automobile" %}</p></th>
+						<th><p>{% trans "catalogs" %}</p></th>		
+					</tr>
+				</thead>
+				<tbody>
+					{% for c in coming %}
+					<tr>
+						<td>
+							<p>{{ c.datec | date:"d.m.Y" }}</p>	
+						</td>
+						<td>
+							<p>{{ c.numb }}</p>	
+						</td>
+						<td>				
+							<p>{{ c.organization }}</p>	
+						</td>
+						<td>				
+							<p>{{ c.replica }}<br>{{ n.reg_number }}</p>	
+						</td>
+						<td>
+							<p>{% trans "total" %}: {{ c.total | stringformat:"1.0f" }} ₽</p>	
+							<!-- <p><a href="{% url 'catalog_index' c.id%}">{% trans "catalogs" %}</a></p>	 -->
+							{% for x in catalog %}
+								{% if c.id == x.coming_id %}
+									<p>{{ x.title }}: {{ x.price | stringformat:"1.0f" }} ₽, {{ x.quantity }} {{ x.unit }}</p>
+								{% endif %}
+							{% endfor %}
+							
+						</td>										
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>		
+	</div>
+	<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
+		<div class="row">
+			<h1>{% trans "outgos" %}</h1>
+		</div>
+		<div class="row">
+			<table id="table2" class="table-manager" style="width:100%">
+				<thead>
+					<tr>
+						<th><p>{% trans "dateo" %}</p></th>
+						<th><p>{% trans "numb" %}</p></th>
+						<th><p>{% trans "organization" %}</p></th>
+						<th><p>{% trans "automobile" %}</p></th>
+						<th><p>{% trans "catalogs" %}</p></th>				
+					</tr>
+				</thead>
+				<tbody>
+					{% for s in outgo %}
+					<tr>
+						<td>
+							<p>{{ s.dateo | date:"d.m.Y" }}</p>	
+						</td>
+						<td>
+							<p>{{ s.numb }}</p>	
+						</td>
+						<td>				
+							<p>{{ s.organization }}</p>	
+						</td>
+						<td>				
+							<p>{{ s.replica }}<br>{{ s.reg_number }}</p>	
+						</td>
+						<td>
+							<p>{% trans "total" %}: {{ s.total | stringformat:"1.0f" }} ₽</p>	
+							<!-- <p><a href="{% url 'sale_index' s.id%}">{% trans "sales" %}</a></p>	 -->
+							{% for x in sale %}
+								{% if s.id == x.outgo_id %}
+									<p>{{ x.title }}: {{ x.price | stringformat:"1.0f" }} ₽, {{ x.quantity }} {{ x.unit }}</p>
+								{% endif %}
+							{% endfor %}
+						</td>		
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="home-tab">
+		<div class="row">
+			<h1>{% trans "catalog_available" %}</h1>
+		</div>
+		<div class="row">
+			<table id="table3" class="table-manager" style="width:100%">
+				<thead>
+					<tr>
+						<th><p>{% trans "catalog_category" %}<br>{% trans "catalog_title" %}</p></th>
+						<th><p>{% trans "catalog_price" %}</p></th>
+						<th><p>{% trans "available" %}</p></th>
+						<th><p>{% trans "total" %}</p></th>
+						<th><p>{% trans "storage" %}</p></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for d in catalog_available %}
+					<tr>
+						<td>
+							<p>{{ d.category }}<br>{{ d.title }}</p>
+						</td>				
+						<td>
+							<p>{{ d.price | stringformat:"1.0f" }} ₽</p>
+						</td>
+						<td>
+							<p>{{ d.available }} {{ d.unit }}</p>
+						</td>
+						<td>
+							<p>{{ d.total | stringformat:"1.0f" }} ₽</p>
+						</td>
+						<td>
+							<p>{{ d.storage }}</p>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock content %}

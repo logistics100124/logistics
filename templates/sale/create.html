@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Create" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "sale" %}</h2>
+{% if catalog.count > 0 %}
+	<form method="post" name="plusminusForm">
+		<div class="row" style="height: 450px; width: 100%; overflow: scroll">
+			{% csrf_token %}
+			<table id="myTable" class="table-manager" style="width:100%; margin: 10px">
+				<thead>
+					<tr>
+						<th><p>{% trans "catalog_category" %}<br>{% trans "catalog_title" %}</p></th>
+						<th><p>{% trans "catalog_price" %}</p></th>
+						<th><p>{% trans "available" %}</p></th>
+						<th><p>{% trans "quantity" %}</p></th>					
+					</tr>
+				</thead>
+				<tbody>
+					{% for p in catalog %}
+					<tr>				
+						<td>
+							<p>{{ p.category }}<br>{{ p.title }}</p>
+						</td>				
+						<td>
+							<p>{{ p.price | stringformat:"1.0f" }} ₽</p>
+						</td>
+						<td>
+							<p>{{ p.available }} {{ p.unit }}</p>
+						</td>
+						<td>
+							<input hidden type="text" name="catalog_id" size="0" value="{{ p.id }}">
+							<input type="number" id="quantity{{ p.id }}" name="quantity{{ p.id }}" min="0" max="{{ p.available }}">
+						</td>			
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="div-button-center">
+			<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	
+			<a class="btn btn-outline-info" style="width:100px" href="{% url 'sale_index' outgo_id %}">{% trans "Back" %}</a> 	
+		</div>		
+	</form>		
+	{% endif %}
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

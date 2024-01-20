@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "automobiles" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "automobiles" %}</h2>
+<p><a href="{% url 'automobile_create'%}">{% trans "Add" %}</a></p>
+<hr>
+{% if automobile.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					<p></p>
+				</th>
+				<th>
+					<p>{% trans "replica" %}</p>
+				</th>
+				<th>
+					<p>{% trans "reg_number" %}</p>
+				</th>
+				<th>
+					<p>{% trans "driver" %}</p>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in automobile %}
+			<tr>
+				<td>
+					<p>
+						<a href="{% url 'automobile_edit' p.id %}">{% trans "Change" %}</a> |
+						<a href="{% url 'automobile_read' p.id %}">{% trans "View" %}</a> |
+						<a onclick="return confirm('Удалить запись?')" href="{% url 'automobile_delete' p.id %}">{% trans "Delete" %}</a>
+					</p>					
+				</td>
+				<td>
+					<p>{{ p.replica }}</p>					
+				</td>
+				<td>
+					<p>{{ p.reg_number }}</p>
+				</td>
+				<td>
+					<p>{{ p.driver }}</p>					
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

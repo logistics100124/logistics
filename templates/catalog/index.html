@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "catalogs" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div id="print_content">
+	<h2>{% trans "Coming" %}</h2>
+	<h4>{% trans "datec" %}: {{ coming.datec| date:"d.m.Y" }}</h4>
+	<h4>{% trans "numb" %}: {{ coming.numb }}</h4>
+	<h4>{% trans "organization" %}: {{ coming.organization }}</h4>
+	<h4>{% trans "automobile" %}: {{ coming.replica }}, {{ coming.reg_number }}</h4>
+	<h4>{% trans "total" %}: {{ coming.total | stringformat:"1.0f" }} ₽</h4>
+	<hr>
+	<h2>{% trans "catalog" %}</h2>
+	<p class="hide_for_print_element"><a href="{% url 'catalog_create' coming_id %}">{% trans "Add" %}</a></p>					
+	<hr>
+	{% if catalog.count > 0 %}
+	<div class="row">
+		<table id="table" class="table-manager" style="width:100%; margin: 10px">
+			<thead>
+				<tr>
+					<th class="hide_for_print_element"><p></p></th>
+					<th><p>{% trans "catalog_category" %}<br>{% trans "catalog_title" %}</p></th>
+					<th><p>{% trans "catalog_price" %}</p></th>
+					<th><p>{% trans "quantity" %}</p></th>
+					<th><p>{% trans "total" %}</p></th>
+					<th><p>{% trans "storage" %}</p></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for p in catalog %}
+				<tr>		
+					<td class="hide_for_print_element">
+						<p>
+							<a href="{% url 'catalog_edit' p.id coming_id %}">{% trans "Change" %}</a> |
+							<a href="{% url 'catalog_read' p.id coming_id %}">{% trans "View" %}</a> |
+							<a onclick="return confirm('Удалить запись?')" href="{% url 'catalog_delete' p.id coming_id %}">{% trans "Delete" %}</a>
+						</p>
+					</td>					
+					<td>
+						<p>{{ p.category }}<br>{{ p.title }}</p>
+					</td>				
+					<td>
+						<p>{{ p.price | stringformat:"1.0f" }} ₽</p>
+					</td>
+					<td>
+						<p>{{ p.quantity }} {{ p.unit }}</p>
+					</td>
+					<td>
+						<p>{{ p.total | stringformat:"1.0f" }} ₽</p>
+					</td>
+					<td>
+						<p>{{ p.storage }}</p>
+					</td>
+							
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
+	<div class="div-button-center hide_for_print_element" style="margin-bottom: 10px">
+		<a class="btn btn-outline-info" style="width:150px" href="{% url 'coming_index' %}">{% trans "Back" %}</a>  
+		<button class="btn btn-info" name = "print" id ="print" onclick='printDiv("print_content")' style="text-align: center;width:150px">{% trans "Print" %}</button>
+	</div>  	
+</div>
+<script>
+	function printDiv(divName) {
+		// Печать контейнера div
+		// Оригинальный контент
+		var originalContents = document.body.innerHTML;
+		// Скрываемый класс
+		var collection = document.getElementsByClassName("hide_for_print_element");
+		for(var i=0; i<collection.length; i++)collection[i].style.display='none';
+		// Область печати
+		var printContents = document.getElementById(divName).innerHTML;
+		// Вывод на печать			
+		document.body.innerHTML = printContents;
+		window.print();
+		// Возврат документа в исходное состояние
+		document.body.innerHTML = originalContents;
+	}
+</script>
+{% endblock content %}
+

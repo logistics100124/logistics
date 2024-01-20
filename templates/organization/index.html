@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "List" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "organizations" %}</h2>
+<p><a href="{% url 'organization_create'%}">{% trans "Add" %}</a></p>
+<hr>
+{% if organization.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p></p></th>
+				<th><p>{% trans "organization_name" %}</p></th>
+				<th><p>{% trans "organization_address" %}</p></th>
+				<th><p>{% trans "organization_phone" %}</p></th>
+				<th><p>{% trans "organization_email" %}</p></th>
+				<th><p>{% trans "organization_leader" %}</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in organization %}
+			<tr>
+				<td>
+					<p>
+					<a href="{% url 'organization_edit' p.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'organization_read' p.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'organization_delete' p.id %}">{% trans "Delete" %}</a>
+					</p>
+				</td>			
+				<td><p>{{ p.name }}</p></td>
+				<td><p>{{ p.address }}</p></td>
+				<td><p>{{ p.phone }}</p></td>
+				<td><p>{{ p.email }}</p></td>
+				<td><p>{{ p.leader }}</p></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

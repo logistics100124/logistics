@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "comings" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "comings" %}</h2>
+<p><a href="{% url 'coming_create'%}">{% trans "Add" %}</a></p>
+<hr>
+{% if coming.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th><p></p></th>				
+				<th><p>{% trans "datec" %}</p></th>
+				<th><p>{% trans "numb" %}</p></th>
+				<th><p>{% trans "organization" %}</p></th>
+				<th><p>{% trans "automobile" %}</p></th>
+				<th><p>{% trans "catalogs" %}</p></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in coming %}
+			<tr>
+				<td>
+					<p>
+						<a href="{% url 'coming_edit' n.id %}">{% trans "Change" %}</a> |
+						<a href="{% url 'coming_read' n.id %}">{% trans "View" %}</a> |
+						<a onclick="return confirm('Удалить запись?')" href="{% url 'coming_delete' n.id %}">{% trans "Delete" %}</a>
+					</p>
+				</td>	
+				<td>
+					<p>{{ n.datec | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					<p>{{ n.numb }}</p>	
+				</td>
+				<td>				
+					<p>{{ n.organization }}</p>	
+				</td>
+				<td>				
+					<p>{{ n.replica }}<br>{{ n.reg_number }}</p>	
+				</td>
+				<td>
+					<p>{% trans "total" %}: {{ n.total | stringformat:"1.0f" }} ₽</p>	
+					<p><a href="{% url 'catalog_index' n.id%}">{% trans "catalogs" %}</a></p>	
+				</td>										
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}

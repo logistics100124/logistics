@@ -964,6 +964,8 @@ def catalog_create(request, coming_id):
             catalog.quantity = request.POST.get("quantity")
             catalog.unit = request.POST.get("unit")
             catalog.storage = request.POST.get("storage")
+            if 'photo' in request.FILES:                
+                catalog.photo = request.FILES['photo']        
             catalogform = CatalogForm(request.POST)
             if catalogform.is_valid():
                 catalog.save()
@@ -992,6 +994,8 @@ def catalog_edit(request, id, coming_id):
             catalog.quantity = request.POST.get("quantity")
             catalog.unit = request.POST.get("unit")
             catalog.storage = request.POST.get("storage")
+            if 'photo' in request.FILES:                
+                catalog.photo = request.FILES['photo'] 
             catalogform = CatalogForm(request.POST)
             if catalogform.is_valid():
                 catalog.save()
@@ -1000,7 +1004,7 @@ def catalog_edit(request, id, coming_id):
                 return render(request, "catalog/edit.html", {"form": catalogform, "coming_id": coming_id})            
         else:
             # Загрузка начальных данных
-            catalogform = CatalogForm(initial={'category': catalog.category, 'title': catalog.title, 'details': catalog.details, 'price': catalog.price, 'quantity': catalog.quantity, 'unit': catalog.unit, 'storage': catalog.storage, })
+            catalogform = CatalogForm(initial={'category': catalog.category, 'title': catalog.title, 'details': catalog.details, 'price': catalog.price, 'quantity': catalog.quantity, 'unit': catalog.unit, 'storage': catalog.storage, 'photo': catalog.photo})
             #print('->',catalog.photo )
             return render(request, "catalog/edit.html", {"form": catalogform, "coming_id": coming_id})
     except Catalog.DoesNotExist:

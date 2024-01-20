@@ -128,7 +128,7 @@ class CategoryForm(forms.ModelForm):
 class CatalogForm(forms.ModelForm):
     class Meta:
         model = Catalog
-        fields = ('category', 'title', 'details', 'price', 'quantity', 'unit', 'storage')
+        fields = ('category', 'title', 'details', 'price', 'quantity', 'unit', 'storage', 'photo')
         widgets = {
             'category': forms.Select(attrs={'class': 'chosen'}),
             'title': TextInput(attrs={"size":"100"}),
@@ -140,6 +140,7 @@ class CatalogForm(forms.ModelForm):
         }
         labels = {
             'category': _('category'),            
+            'photo': _('photo'),            
         }
     # Метод-валидатор для поля numb
     def clean_quantity(self):

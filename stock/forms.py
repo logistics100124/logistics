@@ -140,7 +140,7 @@ class CatalogForm(forms.ModelForm):
         }
         labels = {
             'category': _('category'),            
-            'photo': _('photo'),            
+            'photo': _('catalog_photo'),            
         }
     # Метод-валидатор для поля numb
     def clean_quantity(self):

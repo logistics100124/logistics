@@ -315,7 +315,7 @@ msgstr "Главная"
 
 #: .\templates\base.html:46 .\templates\contact.html:8
 msgid "Contacts"
-msgstr "Котнакты"
+msgstr "Контакты"
 
 #: .\templates\base.html:49
 msgid "Catalog"

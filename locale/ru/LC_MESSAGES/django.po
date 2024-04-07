@@ -83,7 +83,7 @@ msgstr "Цена должна быть больше нуля"
 #: .\stock\forms.py:208 .\templates\catalog\create.html:6
 #: .\templates\catalog\edit.html:6 .\templates\catalog\index.html:15
 msgid "catalog"
-msgstr "Каталог"
+msgstr "Склад"
 
 #: .\stock\models.py:33 .\templates\organization\index.html:15
 msgid "organization_name"
@@ -319,7 +319,7 @@ msgstr "Контакты"
 
 #: .\templates\base.html:49
 msgid "Catalog"
-msgstr "Каталог"
+msgstr "Склад"
 
 #: .\templates\base.html:53
 msgid "reports"
@@ -382,7 +382,7 @@ msgstr "Описание"
 #: .\templates\report\index.html:51 .\templates\report\index.html:71
 #: .\templates\report\index.html:97
 msgid "catalogs"
-msgstr "Каталог"
+msgstr "Склад"
 
 #: .\templates\catalog\index.html:8
 msgid "Coming"
@@ -399,7 +399,7 @@ msgstr "Печать"
 
 #: .\templates\catalog\list.html:4 .\templates\catalog\list.html:7
 msgid "Catalog list"
-msgstr "Каталог"
+msgstr "Склад"
 
 #: .\templates\catalog\list.html:14
 msgid "Search"

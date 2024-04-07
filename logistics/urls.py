@@ -30,6 +30,8 @@ urlpatterns = [
     path('', views.index),
     path('index/', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
+    path('transport/', views.transport, name='transport'),
+    path('stock/', views.stock, name='stock'),
     #path('report/index/', views.report_index, name='report_index'),
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),

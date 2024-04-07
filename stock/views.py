@@ -77,6 +77,22 @@ def contact(request):
         print(exception)
         return HttpResponse(exception)
 
+# Перевозки
+def transport(request):
+    try:
+        return render(request, "transport.html")
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
+
+# Складские услуги
+def stock(request):
+    try:
+        return render(request, "stock.html")
+    except Exception as exception:
+        print(exception)
+        return HttpResponse(exception)
+
 ###################################################################################################
 # Отчеты
 @login_required

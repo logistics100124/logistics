@@ -43,12 +43,20 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<a class="navbar-brand" href="{{ HTTP_HOST }}/">{% trans "Home" %}</a>										
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'contact' %}">{% trans "Contacts" %}</a>          
+					<a class="nav-link" href="{% url 'transport' %}">Транспортная логистика</a>          
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'catalog_list' %}">{% trans "Catalog" %}</a>          
+					<a class="nav-link" href="{% url 'stock' %}">Складская логистика</a>          
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'contact' %}">{% trans "Contacts" %}</a>          
 				</li>
 				{% if user.is_authenticated %}
+					{% if request.user.groups.all.0.name == "Managers" %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'catalog_list' %}">{% trans "Catalog" %}</a>          
+						</li>
+					{% endif %}				
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'report_index' %}">{% trans "reports" %}</a>          
 					</li>
@@ -119,13 +127,13 @@
 				ТОО "Kyran Logistics (Қыран Логистикс)"
 			</p>
 			<p>
-				г.Шымкент, Енбекшинский р-н,<br> Трасса Каратюбинское.Зд.55
+				г.Шымкент, Енбекшинский р-н,<br> Каратюбинское ш.55
 			</p>
-			<a href="tel:+7701XXXXXX">
-			   +7-701-XXX-XXXX<br>
+			<a href="tel:+77013005475">
+			   +7-701-300-5475<br>
 			</a>
-			<a href="mailto:info@kyran-logistics.kz">
-				info@kyran-logistics.kz
+			<a href="mailto:admin@kyranlogistics.com">
+				admin@kyranlogistics.com
 			</a>
 		</div>
 		<div>

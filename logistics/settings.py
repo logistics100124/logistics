@@ -108,10 +108,10 @@ DATABASES = {
     
     'default': {
 	    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-	    'NAME': 'logistics_ze0z',
+	    'NAME': 'logistics_n2mj',
 	    'USER' : 'logistics_admin',
-	    'PASSWORD' : 'DUeQKDS7aH0dHNIOsCaQRhZA80MZahR6',
-	    'HOST' : 'dpg-cmlk0cn109ks7392uot0-a.frankfurt-postgres.render.com',
+	    'PASSWORD' : 'FK2vJYroSDA49bVaE8aTnFBvri1lHUKr',
+	    'HOST' : 'dpg-co93ga5jm4es73aokacg-a.frankfurt-postgres.render.com',
 	    'PORT' : '5432',
     }
 
